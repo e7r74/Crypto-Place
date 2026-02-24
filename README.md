@@ -30,7 +30,7 @@ A modern cryptocurrency tracking application that provides real-time market data
 
 Create a `.env` file in the root directory of the project and add your API key from CoinGecko:
 
-    ```env
+    ```bash
     VITE_API_KEY=your_coingecko_api_key_here
 
 **4. Start the development server**
