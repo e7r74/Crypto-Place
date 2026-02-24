@@ -1,8 +1,9 @@
 import { createContext, useEffect, useState } from 'react'
-import { API_KEY } from '../Data'
+import { API_KEY as localKey } from '../Data'
 export const CoinContext = createContext()
 
 const CoinContextProvider = (props) => {
+  const API_KEY = import.meta.env.VITE_API_KEY || localKey
   const [allCoin, setAllCoin] = useState([])
   const [currency, setCurrency] = useState({
     name: 'usd',
