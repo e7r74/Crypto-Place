@@ -5,7 +5,7 @@ import { CoinContext } from '../../context/CoinContext'
 import LineChart from '../../components/LineChart/LineChart'
 import { API_KEY as localKey } from '../../Data'
 const Coin = () => {
-  const API_KEY = import.meta.env.VITE_API_KEY || localKey
+  const API_KEY = import.meta.env.VITE_API_KEY
   const { coinId } = useParams()
   const [coinData, setCoinData] = useState()
   const [historicalData, setHistoricalData] = useState()
