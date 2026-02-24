@@ -1,5 +1,5 @@
 # 🪙 Crypto Place — Real-Time Crypto Tracker
-
+[![Deploy with Vercel](https://vercel.com/button)](https://crypto-place-qgyqd113z-e7r74s-projects.vercel.app/)
 A modern cryptocurrency tracking application that provides real-time market data using the **CoinGecko API**. Built with **React** and **Vite** for high performance and a smooth user experience.
 
 ## 🚀 Features
