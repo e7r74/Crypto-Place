@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react'
-import { API_KEY as localKey } from '../Data'
+
 export const CoinContext = createContext()
 
 const CoinContextProvider = (props) => {
