@@ -1,0 +1,146 @@
+/* Главный контейнер - делаем его сеткой */
+.coin {
+  display: grid;
+  place-items: center; /* Центрирует ВСЁ содержимое и по вертикали, и по горизонтали */
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Блок заголовка */
+.coin-name {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.coin-name h1 {
+  font-size: clamp(24px, 5vw, 42px); /* Адаптивный размер шрифта */
+  color: white;
+}
+
+.coin-name span {
+  color: #7927ff;
+  text-transform: uppercase;
+}
+
+/* Блок графика */
+.coin-chart {
+  width: 100%;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.05); /* Легкий фон, чтобы видеть границы */
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+/* Контейнер для всей инфы — центрируем его на странице */
+.coin-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 700px; /* Ширина блока с данными */
+  margin: 40px auto; /* Центрирует сам блок */
+  padding: 0 20px;
+}
+
+/* Каждая отдельная строка */
+.coin-info-structre {
+  display: flex;
+  justify-content: space-between; /* Название слева, число справа */
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #3c3c3c; /* Линия разделения */
+}
+
+/* Стили для левого текста (названия) */
+.coin-info-structre p:first-child {
+  color: #bdbdbd;
+  font-size: 16px;
+  margin: 0; /* Убираем лишние отступы от тега p */
+}
+
+/* Стили для правого текста (числа) */
+.coin-info-structre p:last-child {
+  color: #7927ff;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Спиннер */
+.loading {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #333;
+  border-top: 5px solid #7927ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Основные правки для мобилок */
+@media (max-width: 768px) {
+  /* 1. Позволяем фону растягиваться, а контенту не вылезать */
+  .coin {
+    padding: 20px 15px;
+    display: flex; /* Переходим с grid на flex для лучшего контроля */
+    flex-direction: column;
+    align-items: center;
+    min-height: auto; /* Убираем 100vh, чтобы не было дыр при скролле */
+  }
+
+  /* 2. Адаптируем заголовок */
+  .coin-name {
+    margin-top: 80px; /* Чтобы не наезжало на шапку */
+    width: 100%;
+  }
+
+  .coin-name h1 {
+    font-size: 24px; /* Уменьшаем шрифт */
+    line-height: 1.4;
+  }
+
+  /* 3. График должен сжиматься! */
+  .coin-chart {
+    max-width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  /* Чтобы график внутри не ломал ширину */
+  .coin-chart > div {
+    width: 100% !important;
+  }
+
+  /* 4. Инфо-блок: убираем фиксированные 600px */
+  .coin-info {
+    max-width: 100%;
+    padding: 0;
+    margin: 20px 0;
+  }
+
+  /* 5. Самое важное: текст в строчках */
+  .coin-info-structre {
+    padding: 12px 0;
+  }
+
+  .coin-info-structre p {
+    font-size: 14px; /* Уменьшаем шрифт, чтобы цифры не вылетали */
+  }
+
+  /* Если числа всё равно слишком длинные, разрешаем им перенос */
+  .coin-info-structre p:last-child {
+    text-align: right;
+    word-break: break-all;
+    margin-left: 10px;
+  }
+}
