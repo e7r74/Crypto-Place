@@ -1,16 +1,38 @@
-# React + Vite
+# 🪙 Crypto Place — Real-Time Crypto Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern cryptocurrency tracking application that provides real-time market data using the **CoinGecko API**. Built with **React** and **Vite** for high performance and a smooth user experience.
 
-Currently, two official plugins are available:
+## 🚀 Features
+* **Live Market Data:** Displays the top 100 cryptocurrencies with real-time price updates.
+* **Detailed Coin Insights:** Access comprehensive data for each coin, including market cap, 24h high/low, and market rank.
+* **Interactive Charts:** Visualize price trends over the last 10 days using `react-google-charts`.
+* **Currency Switching:** Seamlessly switch between USD, EUR, and RUB.
+* **Responsive Design:** Fully optimized for all screen sizes, from mobile devices to desktops.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Tech Stack
+* **Frontend:** React.js (Vite)
+* **State Management:** React Context API
+* **Data Fetching:** Fetch API / Async-Await
+* **Charts:** React Google Charts
+* **Styling:** CSS3 (Flexbox & Grid)
+* **Deployment:** Vercel
 
-## React Compiler
+## 📦 Installation & Setup
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/e7r74/Crypto-Place.git](https://github.com/e7r74/Crypto-Place.git)
+   cd Crypto-Place
+2. **Install dependencies::**
+   ```bash
+   npm install
+**3. Configure Environment Variables**
 
-## Expanding the ESLint configuration
+Create a `.env` file in the root directory of the project and add your API key from CoinGecko:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+    ```env
+    VITE_API_KEY=your_coingecko_api_key_here
+
+**4. Start the development server**
+   ```bash
+   npm run dev
